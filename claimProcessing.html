@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kisan Rakshak Agent - Hackathon Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .chat-messages::-webkit-scrollbar { width: 5px; }
+        .chat-messages::-webkit-scrollbar-track { background: #f1f1f1; }
+        .chat-messages::-webkit-scrollbar-thumb { background: #888; border-radius: 5px; }
+        .chat-messages::-webkit-scrollbar-thumb:hover { background: #555; }
+        .hidden { display: none; }
+        .integration-point {
+            position: absolute;
+            transform: translateX(-105%);
+            width: 200px;
+            z-index: 10;
+        }
+        .integration-point::after {
+            content: '';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent transparent transparent #1e40af; /* Tailwind blue-800 */
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-40 shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-2">
+                    <svg class="h-8 w-8 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286zm0 13.036h.008v.008h-.008v-.008z" />
+                    </svg>
+                    <span class="text-xl font-bold">Kisan Rakshak Agent</span>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#problem" class="text-gray-600 hover:text-green-600">The Problem</a>
+                    <a href="#solution" class="text-gray-600 hover:text-green-600">Our Solution</a>
+                    <a href="#demo" class="text-gray-600 hover:text-green-600">Live Demo</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <div class="relative bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900">
+                    Revolutionizing Crop Insurance Claims for Indian Farmers.
+                </h1>
+                <p class="mt-6 max-w-2xl mx-auto text-lg text-gray-600">
+                    Introducing the <span class="font-bold text-green-600">Kisan Rakshak Agent</span>: An autonomous AI agent that transforms a process of weeks into a simple, 15-minute conversation.
+                </p>
+                <a href="#demo" class="mt-8 inline-block bg-green-600 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-green-700 transition-transform hover:scale-105">See the Demo</a>
+            </div>
+        </div>
+
+        <!-- Problem Section -->
+        <section id="problem" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold">The Challenge Farmers Face</h2>
+                <p class="mt-4 max-w-3xl mx-auto text-gray-600">The current crop insurance claim process is broken. It's a major roadblock for millions, undermining the goal of "Build for the Nation".</p>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md"><h3 class="font-bold text-lg">Complex Forms</h3><p class="mt-2 text-gray-600">Farmers struggle with confusing paperwork often not in their local language.</p></div>
+                    <div class="bg-white p-6 rounded-lg shadow-md"><h3 class="font-bold text-lg">Long Delays</h3><p class="mt-2 text-gray-600">Manual processing leads to frustratingly long waits for claim settlement.</p></div>
+                    <div class="bg-white p-6 rounded-lg shadow-md"><h3 class="font-bold text-lg">Lack of Transparency</h3><p class="mt-2 text-gray-600">No clear way to track claim status, leading to uncertainty and anxiety.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Section -->
+        <section id="solution" class="py-20 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold">Our Solution: The Agentic AI Approach</h2>
+                <p class="mt-4 max-w-3xl mx-auto text-gray-600">We leverage <strong class="text-blue-700">inya.ai</strong> to build an autonomous agent that handles the entire end-to-end process, making it simple, fast, and transparent.</p>
+            </div>
+        </section>
+
+        <!-- Live Demo Section -->
+        <section id="demo" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-12">Interactive Prototype</h2>
+                
+                <!-- The Prototype from before, now embedded -->
+                <div class="container mx-auto">
+                    <div class="mb-6 bg-white p-2 rounded-lg shadow-md flex justify-center items-center space-x-2 sm:space-x-4">
+                        <button onclick="showScreen('farmer-view')" id="farmer-view-btn" class="px-4 py-2 text-sm sm:text-base font-semibold text-white bg-green-600 rounded-md shadow">Farmer View</button>
+                        <button onclick="showScreen('agent-view')" id="agent-view-btn" class="px-4 py-2 text-sm sm:text-base font-semibold text-gray-600 bg-gray-200 rounded-md">Agent Dashboard</button>
+                    </div>
+                    <div id="farmer-view" class="">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 relative">
+                            <!-- Chat with Annotations -->
+                            <div class="relative w-full max-w-md mx-auto bg-white rounded-2xl shadow-2xl flex flex-col h-[90vh]">
+                                <!-- Annotation 1 -->
+                                <div class="integration-point top-1/4">
+                                    <div class="bg-blue-800 text-white p-3 rounded-lg shadow-lg">
+                                        <h4 class="font-bold">🧠 inya.ai Integration</h4>
+                                        <p class="text-sm mt-1">The agent's conversational ability is powered by inya.ai's Natural Language Processing to understand and respond in the farmer's local language.</p>
+                                    </div>
+                                </div>
+                                <!-- Annotation 2 -->
+                                <div class="integration-point top-3/4">
+                                    <div class="bg-blue-800 text-white p-3 rounded-lg shadow-lg">
+                                        <h4 class="font-bold">🧠 inya.ai Integration</h4>
+                                        <p class="text-sm mt-1">Uploaded documents are sent to the inya.ai agent, which uses Computer Vision to validate the image clarity and content.</p>
+                                    </div>
+                                </div>
+                                <div class="bg-green-600 text-white p-4 rounded-t-2xl flex items-center justify-between shadow-md">
+                                    <div><h1 class="text-lg font-bold">Crop Insurance Claim</h1><p class="text-sm opacity-90">Online</p></div>
+                                    <button onclick="showModal('help-modal')" class="p-2 bg-white/30 rounded-full hover:bg-white/40"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></button>
+                                </div>
+                                <div class="flex-1 p-4 sm:p-6 space-y-4 overflow-y-auto chat-messages">
+                                    <div class="flex items-start gap-3"><div class="w-10 h-10 bg-green-100 rounded-full flex-shrink-0 flex items-center justify-center"><span class="text-green-600 font-bold">A</span></div><div class="bg-gray-200 p-3 rounded-lg rounded-tl-none max-w-xs"><p class="text-sm text-gray-800">नमस्ते! फसल बीमा दावों में आपका स्वागत है।</p></div></div>
+                                    <div class="flex items-start gap-3 justify-end"><div class="bg-green-600 text-white p-3 rounded-lg rounded-br-none max-w-xs"><p class="text-sm">रमेश कुमार</p></div><div class="w-10 h-10 bg-blue-100 rounded-full flex-shrink-0 flex items-center justify-center"><span class="text-blue-600 font-bold">F</span></div></div>
+                                    <div class="flex items-start gap-3"><div class="w-10 h-10 bg-green-100 rounded-full flex-shrink-0 flex items-center justify-center"><span class="text-green-600 font-bold">A</span></div><div class="bg-gray-200 p-3 rounded-lg rounded-tl-none max-w-xs"><p class="text-sm text-gray-800">अब, कृपया अपने आधार कार्ड का एक स्पष्ट फोटो अपलोड करें।</p></div></div>
+                                    <div class="flex items-start gap-3 justify-end"><div class="bg-green-600 text-white p-3 rounded-lg rounded-br-none max-w-xs flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm12 1H4a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V6a1 1 0 00-1-1h-2a1 1 0 00-1-1H5z" /></svg><p class="text-sm">aadhar_card.jpg</p></div><div class="w-10 h-10 bg-blue-100 rounded-full flex-shrink-0 flex items-center justify-center"><span class="text-blue-600 font-bold">F</span></div></div>
+                                    <div class="flex items-start gap-3"><div class="w-10 h-10 bg-green-100 rounded-full flex-shrink-0 flex items-center justify-center"><span class="text-green-600 font-bold">A</span></div><div class="bg-gray-200 p-3 rounded-lg rounded-tl-none max-w-xs"><p class="text-sm text-gray-800">आपका ट्रैकिंग आईडी है: <strong class="font-mono">PMFBY-MP-846291</strong></p></div></div>
+                                </div>
+                                <div class="p-4 bg-gray-50 border-t"><div class="flex items-center gap-2"><button class="p-3 bg-gray-200 hover:bg-gray-300 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" /></svg></button><input type="text" placeholder="अपना संदेश लिखें..." class="flex-1 p-3 border rounded-full"><button class="p-3 bg-green-600 hover:bg-green-700 text-white rounded-full"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="transform: rotate(90deg);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg></button></div></div>
+                            </div>
+                            <!-- Status Check -->
+                            <div class="w-full max-w-md mx-auto bg-white rounded-2xl shadow-2xl flex flex-col h-fit">
+                                <div class="bg-blue-600 text-white p-4 rounded-t-2xl"><h1 class="text-lg font-bold">Check Claim Status</h1></div>
+                                <div class="p-6"><input type="text" value="PMFBY-MP-846291" class="w-full p-2 border rounded-md font-mono"><button class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">Check Status</button></div>
+                                <div class="p-6 border-t"><h2 class="text-md font-semibold mb-4">Application Progress</h2><ul class="space-y-4"><li class="flex items-center"><div class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center z-10">✓</div><div class="flex-1 border-t-2 border-green-500 -ml-4 pl-8 py-1">Application Submitted</div></li><li class="flex items-center"><div class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center z-10">✓</div><div class="flex-1 border-t-2 border-green-500 -ml-4 pl-8 py-1">Document Verified</div></li><li class="flex items-center"><div class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center z-10">...</div><div class="flex-1 border-t-2 border-blue-500 -ml-4 pl-8 py-1 text-blue-600">Field Survey Scheduled</div></li><li class="flex items-center"><div class="w-8 h-8 bg-gray-300 text-gray-600 rounded-full flex items-center justify-center z-10">?</div><div class="flex-1 border-t-2 border-gray-300 -ml-4 pl-8 py-1 text-gray-500">Claim Approved</div></li></ul></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="agent-view" class="hidden relative">
+                         <!-- Annotation 3 -->
+                        <div class="integration-point top-1/4">
+                            <div class="bg-blue-800 text-white p-3 rounded-lg shadow-lg">
+                                <h4 class="font-bold">🧠 inya.ai Integration</h4>
+                                <p class="text-sm mt-1">These KPIs are not static. They are generated in real-time by the inya.ai agent, which constantly tracks and analyzes the claim pipeline.</p>
+                            </div>
+                        </div>
+                        <!-- Annotation 4 -->
+                        <div class="integration-point top-3/4">
+                            <div class="bg-blue-800 text-white p-3 rounded-lg shadow-lg">
+                                <h4 class="font-bold">🧠 inya.ai Integration</h4>
+                                <p class="text-sm mt-1">This is the core decision-making. The inya.ai agent flags claims for human review and provides the specific reason, automating the initial analysis.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-2xl shadow-2xl p-6">
+                            <div class="border-b pb-4 mb-4"><h1 class="text-2xl font-bold">Kisan Rakshak Agent Dashboard</h1></div>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                                <div class="bg-blue-100 p-4 rounded-lg"><h3 class="font-bold text-blue-800">Total Claims</h3><p class="text-3xl font-bold text-blue-900">1,428</p></div>
+                                <div class="bg-green-100 p-4 rounded-lg"><h3 class="font-bold text-green-800">Auto-Approved</h3><p class="text-3xl font-bold text-green-900">1,156</p></div>
+                                <div class="bg-yellow-100 p-4 rounded-lg"><h3 class="font-bold text-yellow-800">Needs Human Review</h3><p class="text-3xl font-bold text-yellow-900">27</p></div>
+                            </div>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left">
+                                    <thead class="bg-gray-50"><tr><th class="p-3">Farmer Name</th><th class="p-3">Tracking ID</th><th class="p-3">Status</th><th class="p-3">Reason for Flag</th></tr></thead>
+                                    <tbody>
+                                        <tr class="border-b"><td class="p-3">Suresh Patel</td><td class="p-3 font-mono">PMFBY-GJ-913452</td><td class="p-3"><span class="bg-green-200 text-green-800 text-xs font-semibold px-2 py-1 rounded-full">Approved</span></td><td class="p-3 text-gray-400">N/A</td></tr>
+                                        <tr class="border-b bg-yellow-50"><td class="p-3">Priya Sharma</td><td class="p-3 font-mono">PMFBY-MH-551243</td><td class="p-3"><span class="bg-yellow-200 text-yellow-800 text-xs font-semibold px-2 py-1 rounded-full">Needs Review</span></td><td class="p-3 font-medium text-yellow-700">Aadhar Photo Blurry</td></tr>
+                                        <tr class="border-b"><td class="p-3">Amit Singh</td><td class="p-3 font-mono">PMFBY-UP-789012</td><td class="p-3"><span class="bg-green-200 text-green-800 text-xs font-semibold px-2 py-1 rounded-full">Approved</span></td><td class="p-3 text-gray-400">N/A</td></tr>
+                                        <tr class="border-b bg-yellow-50"><td class="p-3">Meena Devi</td><td class="p-3 font-mono">PMFBY-RJ-634578</td><td class="p-3"><span class="bg-yellow-200 text-yellow-800 text-xs font-semibold px-2 py-1 rounded-full">Needs Review</span></td><td class="p-3 font-medium text-yellow-700">Bank Details Mismatch</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+            <p>&copy; 2024 Kisan Rakshak Agent Team. A Hackathon Project.</p>
+            <p class="text-sm text-gray-400 mt-2">Built for the Nation, Powered by inya.ai</p>
+        </div>
+    </footer>
+
+    <!-- Help Modal -->
+    <div id="help-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-md p-6 text-center">
+            <h2 class="text-xl font-bold mb-2">How can we help?</h2>
+            <p class="text-gray-600 mb-6">Choose an option below or close this window.</p>
+            <div class="space-y-3">
+                <button class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg">Read Common Questions</button>
+                <button class="w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-4 rounded-lg">Request a Callback</button>
+            </div>
+            <button onclick="hideModal('help-modal')" class="mt-6 text-sm text-gray-500">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Script from previous prototype for tabs and modal
+        const farmerView = document.getElementById('farmer-view');
+        const agentView = document.getElementById('agent-view');
+        const farmerBtn = document.getElementById('farmer-view-btn');
+        const agentBtn = document.getElementById('agent-view-btn');
+
+        function showScreen(screen) {
+            if (screen === 'farmer-view') {
+                farmerView.classList.remove('hidden');
+                agentView.classList.add('hidden');
+                farmerBtn.classList.replace('bg-gray-200', 'bg-green-600');
+                farmerBtn.classList.replace('text-gray-600', 'text-white');
+                agentBtn.classList.replace('bg-green-600', 'bg-gray-200');
+                agentBtn.classList.replace('text-white', 'text-gray-600');
+            } else {
+                farmerView.classList.add('hidden');
+                agentView.classList.remove('hidden');
+                agentBtn.classList.replace('bg-gray-200', 'bg-green-600');
+                agentBtn.classList.replace('text-gray-600', 'text-white');
+                farmerBtn.classList.replace('bg-green-600', 'bg-gray-200');
+                farmerBtn.classList.replace('text-white', 'text-gray-600');
+            }
+        }
+
+        function showModal(modalId) { document.getElementById(modalId).classList.remove('hidden'); }
+        function hideModal(modalId) { document.getElementById(modalId).classList.add('hidden'); }
+    </script>
+</body>
+</html>
